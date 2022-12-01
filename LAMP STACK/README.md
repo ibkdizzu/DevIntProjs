@@ -134,8 +134,7 @@ on windows it is most common to use putty to establish connection
 
 ![access web browser from browser](images/5.Localhost.PNG)
 
-
-
+:warning: Ensure to close connection from file menu once done with the remote connection otherwise remote explorer will annoyingly attempt to re-establish connectiong everytime you launch VScode. Boy, that will upset you eventually, I promise.
 
 ### Install/Configure MySQL
 **Requirements**
