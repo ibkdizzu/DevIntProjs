@@ -52,7 +52,7 @@ The aim of this excercise is a
 - Provisioned server
 - Account with sudo access
 
-- To start, update the list of packages with the command below
+- To start, update the list of packages with the command
 `sudo apt update`
 
 - Next, run the apache2 package installation
@@ -81,7 +81,7 @@ The aim of this excercise is a
 - Provisioned server
 - Account with sudo access
 
-- To start, run the command below in the terminal to install MySQl 
+- To start, run this command in the terminal to install MySQl 
 `sudo apt install mysql-server`
 
 - Accept the prompt to allow installation
@@ -92,9 +92,9 @@ The aim of this excercise is a
 ![MySQL Console](C:\Users\Home\und\PBL\7.Mysql.PNG)
 
 - Next, for added security, create password for root user using the command below
-    `
+    ```
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY <new-password>;
-    `
+    ```
 
 - Exit MySQL
     `exit`
@@ -115,5 +115,19 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 - Account with sudo access
 - Apache installation
 
-- To start, run the command below in the terminal to install PHP
+- To start, run this command in the terminal to install PHP
 ```sudo apt install php libapache2-mod-php php-mysql```
+
+- Confirm php is successfully installed with this command `php -v`
+
+- Result looks like this
+
+![PHP installed](C:\Users\Home\und\PBL\9.Mysql.PNG)
+
+
+So far we have our LAMP stack successfully installed. Kudos to us! :thumbsup:
+
+Next we put our stack to test by creating a virtual host for our website using Apache
+We will set up a domain - projectlamp
+
+- First we create a directory for projectlamp 
