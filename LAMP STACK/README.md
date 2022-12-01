@@ -26,11 +26,11 @@ The aim of this excercise is a
 - To start login to your AWS account, select EC2 on the navigation menu and under Instance select Launch Instances
 - Fill the the installation details like Server name, select OS - we will be working with Ubuntu Server 22.04 LTS for this project
 
-![Alt text](images/0.PNG)
+![Select Ubuntu](images/0.PNG)
 
 - Select or create a new key pair. This will later be used to establish remote access
 
-![Select or create key pair](C:\Users\Home\und\PBL\0.zuri.PNG)
+![Select or create key pair](images/0.zuri.PNG)
 
 - For the purpose of this project, it will suffice to allow all other options use default values
 
@@ -38,7 +38,7 @@ The aim of this excercise is a
 
 - Voila! If all steps are followed correctly a new server just gpt provisioned. Go to EC2 dashboard to access new created server
 
-![PBLab Server is provisioned and running](C:\Users\Home\und\PBL\1.EC2.PNG)
+![PBLab Server is provisioned and running](images/1.EC2.PNG)
 
 - One more step that can be taken here is open TCP port 80 to receive traffic. To do this go to security tab under the server, select the security group, then edit inbound rules and add http rule as show below and save
 
