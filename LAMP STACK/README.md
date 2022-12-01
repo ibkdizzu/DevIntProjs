@@ -240,7 +240,7 @@ phpinfo();
 
 - If all goes well to this point, you should see below 
 
-![Alt text][def]
+![Alt text](C:\Users\Home\und\PBL\DevIntProjs\images\Indexphp.PNG)
 
 Voila! Our website is fully functional. 
 
@@ -251,6 +251,3 @@ For now we remove the php file since it contains sensitive info about our enviro
 `sudo rm /var/www/projectlamp/index.php`
 
 
-
-
-[def]: C:\Users\Home\und\PBL\DevIntProjs\images\Indexphp.PNG
