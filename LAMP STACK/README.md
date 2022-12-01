@@ -26,7 +26,7 @@ The aim of this excercise is a
 - To start login to your AWS account, select EC2 on the navigation menu and under Instance select Launch Instances
 - Fill the the installation details like Server name, select OS - we will be working with Ubuntu Server 22.04 LTS for this project
 
-![Installation in progress](C:\Users\Home\und\PBL\0.PNG)
+![Installation in progress](https://github.com/ibkdizzu/DevIntProjs/issues/1#issue-1470671372)
 
 - Select or create a new key pair. This will later be used to establish remote access
 
