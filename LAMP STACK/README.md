@@ -81,7 +81,7 @@ The aim of this excercise is a
 - Provisioned server
 - Account with sudo access
 
-- To start, run the command below in the terminal
+- To start, run the command below in the terminal to install MySQl 
 `$ sudo apt install mysql-server`
 
 - Accept the prompt to allow installation
@@ -91,3 +91,29 @@ The aim of this excercise is a
 
 ![MySQL Console](C:\Users\Home\und\PBL\7.Mysql.PNG)
 
+- Next, for added security, create password for root user using the command below
+    `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY <new-password>;`
+
+- Exit MySQL
+    `exit`
+
+- Run recommened security script to overwrite default security settings
+    `sudo mysql_secure_installation`
+
+The scripts prompts a couple of options that are either accepted or rejected to update security settings. In this excercise we rejected the first prompt to validate password, and all other prompts
+
+- Afterwards, test that you can now access MySQL only providing just created password
+
+![Login to SQL console with password](C:\Users\Home\und\PBL\8.Mysql.PNG)
+
+
+### Install/Configure PHP
+**Requirements**
+- Provisioned server
+- Account with sudo access
+- Apache installation
+
+- To start, run the command below in the terminal to install PHP
+```
+sudo apt install php libapache2-mod-php php-mysql
+```
