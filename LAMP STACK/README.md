@@ -114,6 +114,4 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 - Apache installation
 
 - To start, run the command below in the terminal to install PHP
-```
-sudo apt install php libapache2-mod-php php-mysql
-```
+```sudo apt install php libapache2-mod-php php-mysql```
