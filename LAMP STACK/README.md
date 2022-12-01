@@ -104,8 +104,8 @@ on windows it is most common to use putty to establish connection
 
 ### Install/Configure Apache
 **Requirements**
-1 Provisioned server
-2 Account with sudo access
+1. Provisioned server
+2. Account with sudo access
 
 - To start, update the list of packages with the command
 
