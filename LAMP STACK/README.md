@@ -82,23 +82,23 @@ on windows it is most common to use putty to establish connection
 
 - click on connect by the side of the server to open the connection. click connect
 
-![alt text](23.configconnect.PNG)
+![alt text](images/19.RemoteExplorer.PNG)
 
 - Remote connection is being established
 
-![alt text](25.configestablish.PNG)
+![alt text](images/19.RemoteExplorer.PNG)
 
 - Select OS and click on continue that appears immediately after
 
-![alt text](26.selectos.PNG)
+![alt text](images/19.RemoteExplorer.PNG)
 
 - Remote connection established 💪 :muscle:
 
-![alt text](27.connected.PNG) 
+![alt text](images/19.RemoteExplorer.PNG)
 
 - Switch to terminal tab to run your commands :sunglasses:
 
-![alt text](26.selectos.PNG)
+![alt text](images/19.RemoteExplorer.PNG)
 
 ### Install/Configure Apache
 **Requirements**
