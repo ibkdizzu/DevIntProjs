@@ -74,31 +74,33 @@ on windows it is most common to use putty to establish connection
 
 ![alt text](images/22.configopen.PNG)
 
+![alt text](images/21.configsettings.PNG)
+
 **NB** IdentityFile: is the absolute path of your keypair on your PC
 
 - Refresh in remote explorer and your new server is now listed (to remove a server - delete the config info in ssh and refresh)
 
-![alt text](23.configlisting.PNG)
+![alt text](images/23.configlisting.PNG)
 
 - click on connect by the side of the server to open the connection. click connect
 
-![alt text](23.configconnect.PNG)
+![alt text](images/23.configconnect.PNG)
 
 - Remote connection is being established
 
-![alt text](images/19.RemoteExplorer.PNG)
+![alt text](images/25.configestablish.PNG)
 
 - Select OS and click on continue that appears immediately after
 
-![alt text](images/19.RemoteExplorer.PNG)
+![alt text](images/26.selectos.PNG)
 
 - Remote connection established 💪 :muscle:
 
-![alt text](images/19.RemoteExplorer.PNG)
+![alt text](images/27.connected.PNG)
 
 - Switch to terminal tab to run your commands :sunglasses:
 
-![alt text](images/19.RemoteExplorer.PNG)
+![alt text](images/28.terminal.PNG)
 
 ### Install/Configure Apache
 **Requirements**
