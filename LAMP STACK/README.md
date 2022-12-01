@@ -49,16 +49,19 @@ The aim of this excercise is a
 
 ### Install/Configure Apache
 **Requirements**
-- Provisioned server
-- Account with sudo access
+1 Provisioned server
+2 Account with sudo access
 
 - To start, update the list of packages with the command
+
 `sudo apt update`
 
 - Next, run the apache2 package installation
+
 `sudo apt install apache2`
 
 - After completion, verify that the apache2 service is running
+
 `sudo systemctl status apache2 `
 
 
@@ -69,6 +72,7 @@ The aim of this excercise is a
 - Now that our server is is running we can access it locally and via the internet
 
 - Run the following commands via bash and the browser
+
 ` curl http://localhost:80` and   `curl http://127.0.0.1:80`
 
 ![access web browser from shell](images/6.Editor.PNG)
@@ -78,15 +82,15 @@ The aim of this excercise is a
 
 ### Install/Configure MySQL
 **Requirements**
-- Provisioned server
-- Account with sudo access
+1 Provisioned server
+2 Account with sudo access
 
-- To start, run this command in the terminal to install MySQl 
-`sudo apt install mysql-server`
+- To start, run this command in the terminal to install MySQl `sudo apt install mysql-server`
 
 - Accept the prompt to allow installation
 
 - On completion, log in to MySQl console with the command
+
 `sudo mysql`
 
 ![MySQL Console](images/7.Mysql.PNG)
@@ -97,32 +101,35 @@ The aim of this excercise is a
     ```
 
 - Exit MySQL
+   
     `exit`
 
 - Run recommened security script to overwrite default security settings
+    
     `sudo mysql_secure_installation`
 
 The scripts prompts a couple of options that are either accepted or rejected to update security settings. In this excercise we rejected the first prompt to validate password, and all other prompts
 
 - Afterwards, test that you can now access MySQL only providing just created password
 
-![Login to SQL console with password](images/8.Mysql.PNG)
+![Login to SQL console with password](images/8.Setpasswordandlogin.PNG)
 
 
 ### Install/Configure PHP
 **Requirements**
-- Provisioned server
-- Account with sudo access
-- Apache installation
+1 Provisioned server
+2 Account with sudo access
+3 Apache installation
 
 - To start, run this command in the terminal to install PHP
+
 ```sudo apt install php libapache2-mod-php php-mysql```
 
 - Confirm php is successfully installed with this command `php -v`
 
 - Result looks like this
 
-![PHP installed](images/9.Mysql.PNG)
+![PHP installed](images/9.PHP.PNG)
 
 
 So far we have our LAMP stack successfully installed. Kudos to us! :thumbsup:
@@ -162,13 +169,13 @@ We will set up a domain - projectlamp
 
 - if all goes well, you'll see something like.
 
-![Alt text](images/10.Mysql.PNG)
+![Alt text](images/10.conffiles.PNG)
 
 - System is requesting for Apache reload, so run the command like below
 
 `sudo systemctl reload apache2`
 
-![Alt text](images/11.Mysql.PNG)
+![Alt text](images/11.reloadapache2.PNG)
 
 - To enable the new virtual host, usr a2ensite command
 
@@ -182,7 +189,7 @@ We will set up a domain - projectlamp
 
 `sudo apache2ctl configtest`
 
-![Alt text](images/12.Mysql.PNG)
+![Alt text](images/12.Configfiletest.PNG)
 
 - Once again reload Apache to ensure all changes are applied
 
@@ -193,7 +200,7 @@ Our new website is now active but with an empty web root.
 ```
 sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
 ```
-![Alt text](images/16.Mysql.PNG)
+![Alt text](images/16.curl.PNG)
 
 We can now check that our website is accessible. We run this check using IP address and DNS names
 
@@ -203,12 +210,7 @@ We can now check that our website is accessible. We run this check using IP addr
 
 `http://<Public-DNS-Name>:80`
 
-![Alt text](images/15.Mysql.PNG)
-
-
-
-
-
+![Alt text](images/15.Index.PNG)
 
 ### Enable PHP on created website
 While index.html is useful to test our webserver, it is mainly used to set up default landing page while maintenance is being carried out. There is need for a new file index.php which should represent the website and must be configured to overwrite index.html either by removing index.html or reordering the listing of the files in **/etc/apache2/mods-enabled/dir.conf**
@@ -240,7 +242,7 @@ phpinfo();
 
 - If all goes well to this point, you should see below 
 
-![Alt text](C:\Users\Home\und\PBL\DevIntProjs\images\Indexphp.PNG)
+![Alt text](images/17.Index.phpDNS.PNG)
 
 Voila! Our website is fully functional. 
 
