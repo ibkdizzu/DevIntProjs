@@ -54,18 +54,18 @@ The aim of this excercise is a
 
 - To start, update the list of packages with the command
 
-`sudo apt update`
+    `sudo apt update`
 
 - Next, run the apache2 package installation
 
-`sudo apt install apache2`
+    `sudo apt install apache2`
 
 - After completion, verify that the apache2 service is running
 
-`sudo systemctl status apache2 `
+    `sudo systemctl status apache2 `
 
 
-![Apache installed and running](images/4.Apache.PNG)
+![Apache installed and running](images/4.Apache2.PNG)
 
 - if all goes well without error, the result will show a running apache service - We have launced our first Web Server in the cloud!! :sunglasses:
 
@@ -73,7 +73,7 @@ The aim of this excercise is a
 
 - Run the following commands via bash and the browser
 
-` curl http://localhost:80` and   `curl http://127.0.0.1:80`
+    ` curl http://localhost:80` and   `curl http://127.0.0.1:80`
 
 ![access web browser from shell](images/6.Editor.PNG)
 
@@ -85,17 +85,20 @@ The aim of this excercise is a
 1 Provisioned server
 2 Account with sudo access
 
-- To start, run this command in the terminal to install MySQl `sudo apt install mysql-server`
+- To start, run this command in the terminal to install MySQl 
+
+    `sudo apt install mysql-server`
 
 - Accept the prompt to allow installation
 
 - On completion, log in to MySQl console with the command
 
-`sudo mysql`
+    `sudo mysql`
 
 ![MySQL Console](images/7.Mysql.PNG)
 
 - Next, for added security, create password for root user using the command below
+    
     ```
     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY <new-password>;
     ```
@@ -123,9 +126,11 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 
 - To start, run this command in the terminal to install PHP
 
-```sudo apt install php libapache2-mod-php php-mysql```
+    ```sudo apt install php libapache2-mod-php php-mysql```
 
-- Confirm php is successfully installed with this command `php -v`
+- Confirm php is successfully installed with this command 
+
+    `php -v`
 
 - Result looks like this
 
@@ -140,15 +145,15 @@ We will set up a domain - projectlamp
 
 - First we create a directory for projectlamp with this command
 
-`sudo mkdir /var/www/projectlamp`
+    `sudo mkdir /var/www/projectlamp`
 
 - Next, assign ownership of the directory to the current user
 
-` sudo chown -R $USER:$USER /var/www/projectlamp`
+    `sudo chown -R $USER:$USER /var/www/projectlamp`
 
 - Next  create and open a new configuration file in Apache’s sites-available directory
 
-`sudo vi /etc/apache2/sites-available/projectlamp.conf`
+    `sudo vi /etc/apache2/sites-available/projectlamp.conf`
 
 - Paste the following block of bare bone configuration codes in the file and save
 
@@ -165,7 +170,7 @@ We will set up a domain - projectlamp
 
 - Check that the files are saved by listing the directory
 
-`sudo ls /etc/apache2/sites-available`
+    `sudo ls /etc/apache2/sites-available`
 
 - if all goes well, you'll see something like.
 
@@ -173,21 +178,21 @@ We will set up a domain - projectlamp
 
 - System is requesting for Apache reload, so run the command like below
 
-`sudo systemctl reload apache2`
+    `sudo systemctl reload apache2`
 
 ![Alt text](images/11.reloadapache2.PNG)
 
 - To enable the new virtual host, usr a2ensite command
 
-`sudo a2ensite projectlamp`
+    `sudo a2ensite projectlamp`
 
 - It is recommended to disable the default website that comes along with Apache installation otherwise our website may b overwritten by the default and be displayed instead. Disable default wbesite with the command below
 
-`sudo a2dissite 000-default`
+    `sudo a2dissite 000-default`
 
 - At this point, we'll to test that there are no syntas error in out file with this command
 
-`sudo apache2ctl configtest`
+    `sudo apache2ctl configtest`
 
 ![Alt text](images/12.Configfiletest.PNG)
 
@@ -206,9 +211,9 @@ We can now check that our website is accessible. We run this check using IP addr
 
 - If all goes well, both checks displays the same result and you see a welcome message along with your EC2 IP address and Domain name
 
-`http://<Public-IP-Address>:80`
+    `http://<Public-IP-Address>:80`
 
-`http://<Public-DNS-Name>:80`
+    `http://<Public-DNS-Name>:80`
 
 ![Alt text](images/15.Index.PNG)
 
@@ -217,7 +222,7 @@ While index.html is useful to test our webserver, it is mainly used to set up de
 
 - Change the order of the files, open the file
 
-`sudo vim /etc/apache2/mods-enabled/dir.conf`
+    `sudo vim /etc/apache2/mods-enabled/dir.conf`
 
 - Within the block of code, change
 
@@ -231,7 +236,7 @@ to
 
 - Create a new file index.php inside the custom web root folder
 
-`vim /var/www/projectlamp/index.php`
+    `vim /var/www/projectlamp/index.php`
 
 - Paste the code below to display php info page
 
@@ -244,12 +249,12 @@ phpinfo();
 
 ![Alt text](images/17.Index.phpDNS.PNG)
 
-Voila! Our website is fully functional. 
+Voila! Our website is fully functional. :ok_hand:
 
 For now we remove the php file since it contains sensitive info about our environment and server, we will be enhancing in the future
 
 - remove index.php
 
-`sudo rm /var/www/projectlamp/index.php`
+    `sudo rm /var/www/projectlamp/index.php`
 
 
