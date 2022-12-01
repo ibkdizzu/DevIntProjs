@@ -48,39 +48,6 @@ The aim of this excercise is a
 ![Add http rule](images/3.EnableTCP.PNG)
 
 
-### Install/Configure Apache
-**Requirements**
-1 Provisioned server
-2 Account with sudo access
-
-- To start, update the list of packages with the command
-
-    `sudo apt update`
-
-- Next, run the apache2 package installation
-
-    `sudo apt install apache2`
-
-- After completion, verify that the apache2 service is running
-
-    `sudo systemctl status apache2 `
-
-
-![Apache installed and running](images/4.Apache2.PNG)
-
-- if all goes well without error, the result will show a running apache service - We have launced our first Web Server in the cloud!! :sunglasses:
-
-- Now that our server is is running we can access it locally and via the internet
-
-- Run the following commands via bash and the browser
-
-    ` curl http://localhost:80` and   `curl http://127.0.0.1:80`
-
-![access web browser from shell](images/6.Editor.PNG)
-
-![access web browser from browser](images/5.Localhost.PNG)
-
-
 ### Remote login to server
 **Requirements**
 1. Provisioned server
@@ -132,6 +99,40 @@ on windows it is most common to use putty to establish connection
 - Switch to terminal tab to run your commands :sunglasses:
 
 ![alt text](26.selectos.PNG)
+
+### Install/Configure Apache
+**Requirements**
+1 Provisioned server
+2 Account with sudo access
+
+- To start, update the list of packages with the command
+
+    `sudo apt update`
+
+- Next, run the apache2 package installation
+
+    `sudo apt install apache2`
+
+- After completion, verify that the apache2 service is running
+
+    `sudo systemctl status apache2 `
+
+
+![Apache installed and running](images/4.Apache2.PNG)
+
+- if all goes well without error, the result will show a running apache service - We have launced our first Web Server in the cloud!! :sunglasses:
+
+- Now that our server is is running we can access it locally and via the internet
+
+- Run the following commands via bash and the browser
+
+    ` curl http://localhost:80` and   `curl http://127.0.0.1:80`
+
+![access web browser from shell](images/6.Editor.PNG)
+
+![access web browser from browser](images/5.Localhost.PNG)
+
+
 
 
 ### Install/Configure MySQL
