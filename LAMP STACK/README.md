@@ -82,7 +82,7 @@ on windows it is most common to use putty to establish connection
 
 - click on connect by the side of the server to open the connection. click connect
 
-![alt text](images/19.RemoteExplorer.PNG)
+![alt text](23.configconnect.PNG)
 
 - Remote connection is being established
 
