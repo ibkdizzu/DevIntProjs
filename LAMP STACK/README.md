@@ -1,4 +1,4 @@
-# LAMP WEBSTACK IMPLEMETATION IN AWS
+## LAMP WEBSTACK IMPLEMETATION IN AWS
 LAMP - stands for Linux, Apache, MySQL, PHP/Python/Perl
 
 Webstacks are a stack of technologies that make different solutions possible. In this implementation, we will be installing these technologies on a cloud server (AWS), and our P is PHP.
