@@ -1,11 +1,11 @@
-## LAMP WEBSTACK IMPLEMETATION IN AWS
+# LAMP WEBSTACK IMPLEMETATION IN AWS
 LAMP - stands for Linux, Apache, MySQL, PHP/Python/Perl
 
 Webstacks are a stack of technologies that make different solutions possible. In this implementation, we will be installing these technologies on a cloud server (AWS), and our P is PHP.
 
 The aim of this excercise is a
 
-### Tasks to be completed
+## Tasks to be completed
 1. Provision Ubuntu Server on AWS
 2. Remote login to server
 3. Install/Configure Apache
@@ -15,8 +15,8 @@ The aim of this excercise is a
 7. Enable PHP on created website
 
 
-## Tasks Workthrough
-### Provision Ubuntu Server on AWS
+# Tasks Workthrough
+## Provision Ubuntu Server on AWS
 **Requirements**
 1. AWS account. Sign up for free tier account [here](https://aws.amazon.com/) if you do not already have one
 2. Ubuntu EC2 server
@@ -48,7 +48,7 @@ The aim of this excercise is a
 ![Add http rule](images/3.EnableTCP.PNG)
 
 
-### Remote login to server
+## Remote login to server
 **Requirements**
 1. Provisioned server
 2. Account with sudo access
@@ -104,7 +104,7 @@ on windows it is most common to use putty to establish connection
 
 > **Warning** Ensure to close connection from file menu once done with the remote connection otherwise remote explorer will annoyingly attempt to re-establish connectiong everytime you launch VScode. Boy, that will upset you eventually, I promise.
 
-### Install/Configure Apache
+## Install/Configure Apache
 **Requirements**
 1. Provisioned server
 2. Account with sudo access
@@ -138,7 +138,7 @@ on windows it is most common to use putty to establish connection
 
 
 
-### Install/Configure MySQL
+## Install/Configure MySQL
 **Requirements**
 1. Provisioned server
 2. Account with sudo access
@@ -176,7 +176,7 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 ![Login to SQL console with password](images/8.Setpasswordandlogin.PNG)
 
 
-### Install/Configure PHP
+## Install/Configure PHP
 **Requirements**
 1. Provisioned server
 2. Account with sudo access
@@ -197,7 +197,7 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 
 So far we have our LAMP stack successfully installed. Kudos to us! :thumbsup:
 
-### Create Virtual host for website using Apache
+## Create Virtual host for website using Apache
 **Requirements**
 1. Provisioned server
 2. Account with sudo access
@@ -280,7 +280,7 @@ We can now check that our website is accessible. We run this check using IP addr
 
 ![Alt text](images/15.Index.PNG)
 
-### Enable PHP on created website
+## Enable PHP on created website
 **Requirements**
 1. Provisioned server
 2. Account with sudo access
