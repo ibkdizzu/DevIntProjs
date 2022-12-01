@@ -17,7 +17,7 @@ The aim of this excercise is a
 ## Tasks Workthrough
 ### Provision Ubuntu Server on AWS
 **Requirements**
-1. AWS account. Sign up for free tier account [here] (https://aws.amazon.com/) if you do not already have one
+1. AWS account. Sign up for free tier account [here](https://aws.amazon.com/) if you do not already have one
 2. Ubuntu EC2 server
 3. A keypair. You can use an existing one or create a new one
 4. Remote connection via ssh (ubuntu), putty (windows). we'll be connecting with ssh via Vscode in this excercise but your ubuntu, wsl, windows etc will also suffice
@@ -26,7 +26,7 @@ The aim of this excercise is a
 - To start login to your AWS account, select EC2 on the navigation menu and under Instance select Launch Instances
 - Fill the the installation details like Server name, select OS - we will be working with Ubuntu Server 22.04 LTS for this project
 
-![Installation in progress](C:\Users\Home\und\PBL\0.PNG)
+![Installation in progress](C:/Users/Home/und/PBL/0.PNG)
 
 - Select or create a new key pair. This will later be used to establish remote access
 
