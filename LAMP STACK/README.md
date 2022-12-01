@@ -42,9 +42,9 @@ The aim of this excercise is a
 
 - One more step that can be taken here is open TCP port 80 to receive traffic. To do this go to security tab under the server, select the security group, then edit inbound rules and add http rule as show below and save
 
-![Click on security tab](C:\Users\Home\und\PBL\1.Security.PNG)
+![Click on security tab](images/1.Security.PNG)
 
-![Add http rule](C:\Users\Home\und\PBL\3.EnableTCP.PNG)
+![Add http rule](images/3.EnableTCP.PNG)
 
 
 ### Install/Configure Apache
@@ -62,7 +62,7 @@ The aim of this excercise is a
 `sudo systemctl status apache2 `
 
 
-![Apache installed and running](C:\Users\Home\und\PBL\4.Apache.PNG)
+![Apache installed and running](images/4.Apache.PNG)
 
 - if all goes well without error, the result will show a running apache service - We have launced our first Web Server in the cloud!! :sunglasses:
 
@@ -71,9 +71,9 @@ The aim of this excercise is a
 - Run the following commands via bash and the browser
 ` curl http://localhost:80` and   `curl http://127.0.0.1:80`
 
-![access web browser from shell](C:\Users\Home\und\PBL\6.Editor.PNG)
+![access web browser from shell](images/6.Editor.PNG)
 
-![access web browser from browser](C:\Users\Home\und\PBL\5.Localhost.PNG)
+![access web browser from browser](images/5.Localhost.PNG)
 
 
 ### Install/Configure MySQL
@@ -89,7 +89,7 @@ The aim of this excercise is a
 - On completion, log in to MySQl console with the command
 `sudo mysql`
 
-![MySQL Console](C:\Users\Home\und\PBL\7.Mysql.PNG)
+![MySQL Console](images/7.Mysql.PNG)
 
 - Next, for added security, create password for root user using the command below
     ```
@@ -106,7 +106,7 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 
 - Afterwards, test that you can now access MySQL only providing just created password
 
-![Login to SQL console with password](C:\Users\Home\und\PBL\8.Mysql.PNG)
+![Login to SQL console with password](images/8.Mysql.PNG)
 
 
 ### Install/Configure PHP
@@ -122,7 +122,7 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 
 - Result looks like this
 
-![PHP installed](C:\Users\Home\und\PBL\9.Mysql.PNG)
+![PHP installed](images/9.Mysql.PNG)
 
 
 So far we have our LAMP stack successfully installed. Kudos to us! :thumbsup:
@@ -162,13 +162,13 @@ We will set up a domain - projectlamp
 
 - if all goes well, you'll see something like.
 
-![Alt text](C:\Users\Home\und\PBL\10.Mysql.PNG)
+![Alt text](images/10.Mysql.PNG)
 
 - System is requesting for Apache reload, so run the command like below
 
 `sudo systemctl reload apache2`
 
-![Alt text](C:\Users\Home\und\PBL\12.Mysql.PNG)
+![Alt text](images/11.Mysql.PNG)
 
 - To enable the new virtual host, usr a2ensite command
 
@@ -182,7 +182,7 @@ We will set up a domain - projectlamp
 
 `sudo apache2ctl configtest`
 
-![Alt text](C:\Users\Home\und\PBL\12.Mysql.PNG)
+![Alt text](images/12.Mysql.PNG)
 
 - Once again reload Apache to ensure all changes are applied
 
@@ -193,7 +193,7 @@ Our new website is now active but with an empty web root.
 ```
 sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
 ```
-![Alt text](C:\Users\Home\und\PBL\16.Mysql.PNG)
+![Alt text](images/16.Mysql.PNG)
 
 We can now check that our website is accessible. We run this check using IP address and DNS names
 
@@ -203,7 +203,7 @@ We can now check that our website is accessible. We run this check using IP addr
 
 `http://<Public-DNS-Name>:80`
 
-![Alt text](C:\Users\Home\und\PBL\15.Mysql.PNG)
+![Alt text](images/15.Mysql.PNG)
 
 
 
