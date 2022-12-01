@@ -82,7 +82,7 @@ The aim of this excercise is a
 - Account with sudo access
 
 - To start, run the command below in the terminal to install MySQl 
-`$ sudo apt install mysql-server`
+`sudo apt install mysql-server`
 
 - Accept the prompt to allow installation
 
@@ -92,7 +92,9 @@ The aim of this excercise is a
 ![MySQL Console](C:\Users\Home\und\PBL\7.Mysql.PNG)
 
 - Next, for added security, create password for root user using the command below
-    `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY <new-password>;`
+    `
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY <new-password>;
+    `
 
 - Exit MySQL
     `exit`
