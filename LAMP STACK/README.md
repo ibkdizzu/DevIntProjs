@@ -7,11 +7,12 @@ The aim of this excercise is a
 
 ### Tasks to be completed
 1. Provision Ubuntu Server on AWS
-2. Install/Configure Apache
-3. Install/Configure MySQL
-4. Install/Configure PHP
-5. Create Virtual host for website using Apache
-6. Enable PHP on created website
+2. Remote login to server
+3. Install/Configure Apache
+4. Install/Configure MySQL
+5. Install/Configure PHP
+6. Create Virtual host for website using Apache
+7. Enable PHP on created website
 
 
 ## Tasks Workthrough
@@ -80,10 +81,63 @@ The aim of this excercise is a
 ![access web browser from browser](images/5.Localhost.PNG)
 
 
+### Remote login to server
+**Requirements**
+1. Provisioned server
+2. Account with sudo access
+3. keypair
+
+- If the keypair is newly created, the permission needs to be changed otherwise remote connection request will be denied
+
+change permission for your keypair using this command
+
+    `sudo chmod 0400 <private-key-name>.pem` 
+- For this project we are using an existing keypair whose permission has been previously changed so this step is skipped
+
+- Next you want to connect to the server. There are several platforms for connection, most common is to ssh via Ubuntu bash from a PC. 
+on windows it is most common to use putty to establish connection
+
+- In this project we will be demonstrating how to use VScode to connect
+
+- First ensure the vscode remote connection **remote explorer* extension is installed
+
+![alt text](images/19.RemoteExplorer.PNG)
+
+- In the remote explorer settings, add the config settings of your server to the ssh settings file
+
+![alt text](images/22.configopen.PNG)
+
+**NB** IdentityFile: is the absolute path of your keypair on your PC
+
+- Refresh in remote explorer and your new server is now listed (to remove a server - delete the config info in ssh and refresh)
+
+![alt text](23.configlisting.PNG)
+
+- click on connect by the side of the server to open the connection. click connect
+
+![alt text](23.configconnect.PNG)
+
+- Remote connection is being established
+
+![alt text](25.configestablish.PNG)
+
+- Select OS and click on continue that appears immediately after
+
+![alt text](26.selectos.PNG)
+
+- Remote connection established 💪 :muscle:
+
+![alt text](27.connected.PNG) 
+
+- Switch to terminal tab to run your commands :sunglasses:
+
+![alt text](26.selectos.PNG)
+
+
 ### Install/Configure MySQL
 **Requirements**
-1 Provisioned server
-2 Account with sudo access
+1. Provisioned server
+2. Account with sudo access
 
 - To start, run this command in the terminal to install MySQl 
 
@@ -120,9 +174,9 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 
 ### Install/Configure PHP
 **Requirements**
-1 Provisioned server
-2 Account with sudo access
-3 Apache installation
+1. Provisioned server
+2. Account with sudo access
+3. Apache installed and configured
 
 - To start, run this command in the terminal to install PHP
 
@@ -140,6 +194,11 @@ The scripts prompts a couple of options that are either accepted or rejected to 
 So far we have our LAMP stack successfully installed. Kudos to us! :thumbsup:
 
 ### Create Virtual host for website using Apache
+**Requirements**
+1. Provisioned server
+2. Account with sudo access
+3. Apache installed and configured
+
 Next we put our stack to test by creating a virtual host for our website using Apache
 We will set up a domain - projectlamp
 
@@ -218,6 +277,13 @@ We can now check that our website is accessible. We run this check using IP addr
 ![Alt text](images/15.Index.PNG)
 
 ### Enable PHP on created website
+**Requirements**
+1. Provisioned server
+2. Account with sudo access
+3. Apache installed and configured
+4. PHP installed and configured
+
+
 While index.html is useful to test our webserver, it is mainly used to set up default landing page while maintenance is being carried out. There is need for a new file index.php which should represent the website and must be configured to overwrite index.html either by removing index.html or reordering the listing of the files in **/etc/apache2/mods-enabled/dir.conf**
 
 - Change the order of the files, open the file
