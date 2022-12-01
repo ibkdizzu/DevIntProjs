@@ -76,7 +76,7 @@ on windows it is most common to use putty to establish connection
 
 ![alt text](images/21.configsettings.PNG)
 
-**NB** IdentityFile: is the absolute path of your keypair on your PC
+**Note** IdentityFile: is the absolute path of your keypair on your PC
 
 - Refresh in remote explorer and your new server is now listed (to remove a server - delete the config info in ssh and refresh)
 
@@ -101,6 +101,8 @@ on windows it is most common to use putty to establish connection
 - Switch to terminal tab to run your commands :sunglasses:
 
 ![alt text](images/28.terminal.PNG)
+
+**Warning** Ensure to close connection from file menu once done with the remote connection otherwise remote explorer will annoyingly attempt to re-establish connectiong everytime you launch VScode. Boy, that will upset you eventually, I promise.
 
 ### Install/Configure Apache
 **Requirements**
@@ -134,7 +136,7 @@ on windows it is most common to use putty to establish connection
 
 ![access web browser from browser](images/5.Localhost.PNG)
 
-:warning: Ensure to close connection from file menu once done with the remote connection otherwise remote explorer will annoyingly attempt to re-establish connectiong everytime you launch VScode. Boy, that will upset you eventually, I promise.
+
 
 ### Install/Configure MySQL
 **Requirements**
