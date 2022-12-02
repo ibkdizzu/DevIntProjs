@@ -58,7 +58,8 @@ The aim of this excercise is a
 
 change permission for your keypair using this command
 
-    `sudo chmod 0400 <private-key-name>.pem` 
+    sudo chmod 0400 <private-key-name>.pem
+
 - For this project we are using an existing keypair whose permission has been previously changed so this step is skipped
 
 - Next you want to connect to the server. There are several platforms for connection, most common is to ssh via Ubuntu bash from a PC. 
@@ -66,7 +67,7 @@ on windows it is most common to use putty to establish connection
 
 - In this project we will be demonstrating how to use VScode to connect
 
-- First ensure the vscode remote connection **remote explorer* extension is installed
+- First ensure the vscode remote connection *remote explorer* extension is installed
 
 ![alt text](images/19.RemoteExplorer.PNG)
 
