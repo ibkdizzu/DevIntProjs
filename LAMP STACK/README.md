@@ -170,9 +170,9 @@ on windows it is most common to use putty to establish connection
     
     `sudo mysql_secure_installation`
 
-The scripts prompts a couple of options that are either accepted or rejected to update security settings. In this excercise we rejected the first prompt to validate password, and all other prompts
+The scripts prompts a couple of options that are either accepted or rejected to update security settings. In this excercise we rejected the first prompt to validate password, and accepted all other prompts
 
-- Afterwards, test that you can now access MySQL only providing just created password
+- Afterwards, test that you can now access MySQL only with password
 
 ![Login to SQL console with password](images/8.Setpasswordandlogin.PNG)
 
@@ -246,15 +246,15 @@ We will set up a domain - projectlamp
 
 ![Alt text](images/11.reloadapache2.PNG)
 
-- To enable the new virtual host, usr a2ensite command
+- To enable the new virtual host, use a2ensite command
 
     `sudo a2ensite projectlamp`
 
-- It is recommended to disable the default website that comes along with Apache installation otherwise our website may b overwritten by the default and be displayed instead. Disable default wbesite with the command below
+- It is recommended to disable the default website that comes along with Apache installation otherwise our website may be overwritten by the default and be displayed instead. Disable default wbesite with the command below
 
     `sudo a2dissite 000-default`
 
-- At this point, we'll to test that there are no syntas error in out file with this command
+- At this point, we'll to test that there are no syntax errors in out file with this command
 
     `sudo apache2ctl configtest`
 
