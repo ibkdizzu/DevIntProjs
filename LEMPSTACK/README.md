@@ -386,7 +386,7 @@ again, this time using the custom user credentials
 
 ![Alt text](images/17.SQLInsert.PNG)
 
-Also try to be a tad more creative than me here 
+Also try to be a tad more creative than me here  :smiley:
 
 - Ok, next is to query the database to ensure all data were successfully saved
 
