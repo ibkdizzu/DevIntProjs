@@ -27,7 +27,7 @@ Webstacks are a stack of technologies that make different solutions possible. In
 - To start login to your AWS account, select EC2 on the navigation menu and under Instance select Launch Instances
 - Fill the the installation details like Server name, select OS - we will be working with Ubuntu Server 22.04 LTS for this project
 
-![Select Ubuntu](images/PBLAB.PNG)
+![Select Ubuntu](images/PBLab.PNG)
 
 - Select or create a new key pair. This will later be used to establish remote access
 
