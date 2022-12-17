@@ -645,3 +645,6 @@ Check that you can add more tasks to the app
 ![alt text](images/20.Finish2.PNG)
 ![alt text](images/20.Finish3.PNG)
 
+- If you got this, Congratulations!:congratulations: You made it once again. Go ahead and build that castle :clap:
+
+- If you didn't get this then please trace your steps back through the instructions. Goodluck:exclamation::exclamation:
