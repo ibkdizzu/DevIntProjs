@@ -214,18 +214,23 @@ Sign up for a free account [here](https://www.mongodb.com/atlas-signup-from-mlab
 Complete a get started checklist as shown in the images below
 
 1. Create Cluster
+
 ![alt text](images/9.DBCluster.PNG)
 
 2. Create database user
+
 ![alt text](images/7.DBuser.PNG)
 
 3. Allow connectivity from anywhere
+
 ![alt text](images/6.NetworkAccess.PNG)
 
 4. Create DB
 
 ![alt text](images/10.CreateDB7.PNG)
+
 ![alt text](images/10.CreateDB8.PNG)
+
 ![alt text](images/10.CreateDB22.PNG)
 
 create .env in TOdo folder with the command below
