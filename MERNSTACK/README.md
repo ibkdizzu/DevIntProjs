@@ -298,7 +298,7 @@ Open your Postman, create a POST request to the API
 
     `http://<PublicIP-or-PublicDNS>:5000/api/todos`
 
-![alt text](images/12.POST2.PNG)
+![alt text](images/11.postman1.PNG)
 ![alt text](images/12.POST.PNG)
 ![alt text](images/12.GET.PNG)
 
@@ -331,7 +331,10 @@ Before testing the react app, there are some dependencies that need to be instal
     },
     ```
 
-Also add  key value pair "proxy": "http://localhost:5000" to the file
+Next, add the key value pair value "proxy": "http://localhost:5000" to client\package.json file
+
+> **Warning**  There are two package.json files we just editted with different values. One in Todo directory and the other in Todo/clients directoey. 
+Ensure to put the value in the file. 5 + hours of debugging tells the story :sweat:
 
 Now, ensure you are inside the Todo directory, run
 
@@ -340,6 +343,8 @@ Now, ensure you are inside the Todo directory, run
 ![alt text](images/14.REACT2.PNG)
 
 > **Note** To access the application from the Internet ensure to open TCP port 3000 on the server
+
+![alt text](images/17.3000.PNG)
 
 ## Creating your React Components
 From Todo directory 
@@ -630,3 +635,13 @@ monospace;
 Go to the Todo directory and run
 
     `npm run dev`
+
+If all works fine to this point then your fully  functional Todo app is displayed
+
+![alt text](images/20.Finish.PNG)
+
+Check that you can add more tasks to the app
+
+![alt text](images/20.Finish2.PNG)
+![alt text](images/20.Finish3.PNG)
+
