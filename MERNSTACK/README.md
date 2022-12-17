@@ -8,7 +8,7 @@ MERN STACK CONSIST OF THE FOLLOWING COMPONENTS AND WE WILL BE WORKING WITH ALL O
 
  To get started we provision an AWS Ubuntu server. This has been treated in previous projects. 
 
- Please check here if you need guidance to set up a serber and connect to it
+ Please check [here](https://github.com/ibkdizzu/DevIntProjs/tree/main/LAMP%20STACK)  if you need guidance to set up a serber and connect to it
 
  # Backend Configuration
 To start every project, it is recommended to always update/upgrade your linux server to recieve latest packages
