@@ -239,8 +239,11 @@ create .env in TOdo folder with the command below
 4. replace <dbname> with database name
 
 Here is how to get the connection string
+
 ![alt text](images/9.DBCluster2.PNG)
+
 ![alt text](images/10.CreateDB23.PNG)
+
 ![alt text](images/10.CreateDB24.PNG)
 
 
