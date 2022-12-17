@@ -233,10 +233,10 @@ create .env in TOdo folder with the command below
     DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'
 
 > **Note**
-    replace <username> with db username
-    replace <password> with user password
-    replace <network-address> with connection URL 
-    replcae <dbname> with database name
+1. replace <username> with db username
+2. replace <password> with user password
+3. replace <network-address> with connection string 
+4. replace <dbname> with database name
 
 Here is how to get the connection string
 ![alt text](images/9.DBCluster2.PNG)
