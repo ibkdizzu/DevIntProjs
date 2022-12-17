@@ -14,8 +14,8 @@ MERN STACK CONSIST OF THE FOLLOWING COMPONENTS AND WE WILL BE WORKING WITH ALL O
 To start every project, it is recommended to always update/upgrade your linux server to recieve latest packages
 To do this, run the commands below and follow the prompts
 
-    `sudo apt update`
-    `sudo apt upgrade`
+    sudo apt update
+    sudo apt upgrade
 
 To install Node.js, we fetch it's location from Ubuntu repositories
 
