@@ -19,24 +19,24 @@ To do this, run the commands below and follow the prompts
 
 To install Node.js, we fetch it's location from Ubuntu repositories
 
-    `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 Install Node.js with the command below
 
-    `sudo apt-get install -y nodejs
+    sudo apt-get install -y nodejs
 
 Check that node.js is installed with
 
-    `node -v`
-    `npm -v`
+    node -v
+    npm -v
 
 Create a directory for the project
 
-    `mkdir Todo`
+    mkdir Todo
 
 Change directory into Todo and initialize the project directory using command and follow the prompt to add some custom info to your project as you prefer. To use default value, click through the promts
 
-    `npm init`
+    npm init
 
 ![alt text](images/1.npminit.PNG)
 
@@ -44,19 +44,19 @@ Change directory into Todo and initialize the project directory using command an
 
 To install express, run the command
 
-    `npm install express`
+    npm install express
 
 Also install dontenv module
 
-    `npm install dotenv`
+    npm install dotenv
 
 Create and edit index.js file using vim
 
-    `vim index.js`
+    vim index.js
 
 Copy the following code into index.js
 
-    ```
+    
     const express = require('express');
     require('dotenv').config();
     
@@ -77,13 +77,13 @@ Copy the following code into index.js
     app.listen(port, () => {
     console.log(`Server running on port ${port}`)
     });
-    ```
+    
 
 > **Note** we have specified to use port 5000 in the code which will be required later when we go on the browser.
 
 Now, we test our server to ensure all works well. Run below command
 
-    `node index.js`
+    node index.js
 
 If all is as expected, result is shown below
 
@@ -95,7 +95,7 @@ NB: Ensure to add an inbound that allows port 5000 on your server
 
 Open up your browser and try to access your server’s Public IP or Public DNS name followed by port 5000
 
-    `http://<PublicIP-or-PublicDNS>:5000`
+    http://<PublicIP-or-PublicDNS>:5000
 
 ![alt text](images/4.ExpressDNS.PNG)
 
@@ -103,17 +103,17 @@ Open up your browser and try to access your server’s Public IP or Public DNS n
 
 ### Routes
 There are three actions that our To-Do application needs to be able to do:
-    1. Create a new task
-    2. Display list of all tasks
-    3. Delete a completed task
+1. Create a new task
+2. Display list of all tasks
+3. Delete a completed task
 
 For each task, we need to create routes that will define various endpoints that the To-do app will depend on. So let us create a folder routes
 
-    `mkdir routes`
+    mkdir routes
 
 Create and edit api.js file with the script below
 
-    ```
+
     const express = require ('express');
     const router = express.Router();
     
@@ -130,7 +130,7 @@ Create and edit api.js file with the script below
     })
     
     module.exports = router;
-    ```
+
 Next, we create Models directory.
 
 # MODELS
@@ -140,15 +140,14 @@ To create a Schema and a model, install mongoose which is a Node.js package that
 
 Change directory back Todo folder and install Mongoose
 
-    `npm install mongoose`
+    npm install mongoose
 
 Create a new folder models change directory into it and create todo.js file
 
-    `mkdir models && cd models && touch todo.js`
+    mkdir models && cd models && touch todo.js
 
 Edit todo.js with script below
 
-    ```
     const mongoose = require('mongoose');
     const Schema = mongoose.Schema;
     
@@ -164,11 +163,11 @@ Edit todo.js with script below
     const Todo = mongoose.model('todo', TodoSchema);
     
     module.exports = Todo;
-    ```
+ 
 
 Also replace comtent in Todo/routes/api.js with 
 
-    ```
+
     const express = require ('express');
     const router = express.Router();
     const Todo = require('../models/todo');
@@ -200,7 +199,7 @@ Also replace comtent in Todo/routes/api.js with
     })
     
     module.exports = router;
-    ```
+ 
 
 The next piece of our application will be the MongoDB Database
 
@@ -231,7 +230,7 @@ Complete a get started checklist as shown in the images below
 
 create .env in TOdo folder with the command below
 
-    `DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'`
+    DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'
 
 > **Note**
     replace <username> with db username
@@ -247,7 +246,7 @@ Here is how to get the connection string
 
 Here, replace content in index.js with
 
-    ```const express = require('express');
+    const express = require('express');
     const bodyParser = require('body-parser');
     const mongoose = require('mongoose');
     const routes = require('./routes/api');
@@ -284,11 +283,11 @@ Here, replace content in index.js with
     app.listen(port, () => {
     console.log(`Server running on port ${port}`)
     });
-    ```
+
 
 Start your server using the command:
 
-    `node index.js`
+    node index.js
 
 ![alt text](images/Database.PNG)
 
@@ -296,7 +295,7 @@ During development, we will need a way to test our code using RESTfulL API. In t
 
 Open your Postman, create a POST request to the API
 
-    `http://<PublicIP-or-PublicDNS>:5000/api/todos`
+    http://<PublicIP-or-PublicDNS>:5000/api/todos
 
 ![alt text](images/11.postman1.PNG)
 ![alt text](images/12.POST.PNG)
@@ -309,36 +308,36 @@ We have successfully created our Backend, we now proceed to create the Frontend.
 To start out with the frontend of the To-do app, we will use the create-react-app command to scaffold our app.
 In the same root directory as your backend code, which is the Todo directory, run:
 
-    ` npx create-react-app client`
+    npx create-react-app client
 
 Before testing the react app, there are some dependencies that need to be installed.
 
 - Concurrently
 
-    `npm install concurrently --save-dev`
+    npm install concurrently --save-dev
 
 - nodemon
 
-    `npm install nodemon --save-dev`
+    npm install nodemon --save-dev
 
 - In Todo folder open the package.json file, change the script key/value content to 
 
-    ```
+
     "scripts": {
     "start": "node index.js",
     "start-watch": "nodemon index.js",
     "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
     },
-    ```
+
 
 Next, add the key value pair value "proxy": "http://localhost:5000" to client\package.json file
 
 > **Warning**  There are two package.json files we just editted with different values. One in Todo directory and the other in Todo/clients directory. 
-Ensure to put the value in the file. 5 + hours of debugging tells the story :sweat:
+Ensure to put the right values in the right file. 5 + hours of debugging tells the story :sweat:
 
 Now, ensure you are inside the Todo directory, run
 
-    `npm run dev`
+    npm run dev
 
 ![alt text](images/14.REACT2.PNG)
 
@@ -349,12 +348,13 @@ Now, ensure you are inside the Todo directory, run
 ## Creating your React Components
 From Todo directory 
 
-    `cd client\src`
-    `mkdir components && cd components && touch Input.js ListTodo.js Todo.js`
+    cd client\src
+    mkdir components && cd components && touch Input.js ListTodo.js Todo.js
 
 Edit the javascript files as demonstrated below
-    `vim Input.js`
-    ```
+    
+    vim Input.js
+
     import React, { Component } from 'react';
     import axios from 'axios';
     
@@ -400,16 +400,16 @@ Edit the javascript files as demonstrated below
     }
     
     export default Input
-    ```
+
 Go back to client folder, Install Axios which is a Promise based HTTP client for the browser and node.js in clients directory
 
-    `npm install axios`
+    npm install axios
 
 In src/components directory
 
 Edit ListTodo.js
 
-    ```
+
     import React from 'react';
     
     const ListTodo = ({ todos, deleteTodo }) => {
@@ -436,11 +436,11 @@ Edit ListTodo.js
     }
     
     export default ListTodo
-    ```
+
 
 Edit Todo.js
 
-    ```
+
     import React, {Component} from 'react';
     import axios from 'axios';
     
@@ -496,13 +496,13 @@ Edit Todo.js
     }
     
     export default Todo;
-    ```
+
 
 Return to client folder, edit App.js by copying these into it
 
 import React from 'react';
  
-    ```import Todo from './components/Todo';
+    import Todo from './components/Todo';
     import './App.css';
     
     const App = () => {
@@ -514,11 +514,11 @@ import React from 'react';
     }
     
     export default App;
-    ```
+
 
 In the src directory open the App.css, Then paste the following code into App.css:
 
-    ```
+
     .App {
     text-align: center;
     font-size: calc(10px + 2vmin);
@@ -606,11 +606,11 @@ In the src directory open the App.css, Then paste the following code into App.cs
     margin-top: 0;
     }
     }
-    ```
+
 
 In the src directory open the index.css
 
-    `vim index.css`
+    vim index.css
 
 Copy and paste the code below:
 
@@ -634,7 +634,7 @@ monospace;
 
 Go to the Todo directory and run
 
-    `npm run dev`
+    npm run dev
 
 If all works fine to this point then your fully  functional Todo app is displayed
 
