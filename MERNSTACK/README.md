@@ -333,7 +333,7 @@ Before testing the react app, there are some dependencies that need to be instal
 
 Next, add the key value pair value "proxy": "http://localhost:5000" to client\package.json file
 
-> **Warning**  There are two package.json files we just editted with different values. One in Todo directory and the other in Todo/clients directoey. 
+> **Warning**  There are two package.json files we just editted with different values. One in Todo directory and the other in Todo/clients directory. 
 Ensure to put the value in the file. 5 + hours of debugging tells the story :sweat:
 
 Now, ensure you are inside the Todo directory, run
