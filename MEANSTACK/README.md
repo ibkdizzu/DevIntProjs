@@ -304,7 +304,7 @@ Do this by editing the inbound rules of your EC2 security group
 
 Now you can access our Book Register web application from the Internet with a browser using a Public IP address or Public DNS name.
 
-![alt text](images/11.preDnS.PNG)
+![alt text](images/12.PreDNS.PNG)
 ![alt text](images/11.preIP.PNG)
 
 This is how your WebBook Register Application will look in the browser
@@ -312,5 +312,9 @@ This is how your WebBook Register Application will look in the browser
 Populate with few data and refresh the page
 
 ![alt text](images/10.DNS.PNG)
+
+- If you got this, Congratulations!:congratulations: You made it once again. Go ahead and build that castle :clap:
+
+- If you didn't get this then please trace your steps back through the instructions. Goodluck:exclamation::exclamation:
 
 
