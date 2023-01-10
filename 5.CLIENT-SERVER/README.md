@@ -43,7 +43,7 @@ In this little example, your terminal will be the client, while www.netflix.com 
 
     Because both EC2 instances are located in the same local virtual network, they can communicate to each other using local IP addresses. Though a few things need to be done to achieve this
 
-    1. open mysql port 3306 on mysql server. For extra security, allow access only to the specific local IP address of the mysql client
+    1. Open mysql port 3306 on mysql server. For extra security, allow access only to the specific local IP address of the mysql client
 
     ![alt text](images/1.Secgrp2.PNG)
 
@@ -69,7 +69,6 @@ In this little example, your terminal will be the client, while www.netflix.com 
     For clarity:
     - mysql server ip: 172.31.81.127
     - mysql client ip: 172.31.82.150
-
     From our sql client (172.31.82.150), we connected to the database on our mysql server (172.31.81.127) using mysql command
     
 - Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
