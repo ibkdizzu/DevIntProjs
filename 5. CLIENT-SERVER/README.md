@@ -16,9 +16,9 @@ read/writes to/from a DB.
 
 Let’s take a very quick example and see Client-Server communicatation in action.
 
-Open up your Ubuntu or Windows terminal and run the curl command to any popular website e.g netflix.com:
+- Open up your Ubuntu or Windows terminal and run the curl command to any popular website e.g netflix.com:.
 
-   `curl -Iv www.netflix.com`
+    `curl -Iv www.netflix.com`
 
 See the response from the remote server in the below output. You can also see that the requests from the URL are being served by a computer with an IP address **54.74.73.31** on port **80**
 
@@ -30,8 +30,8 @@ In this little example, your terminal will be the client, while www.netflix.com 
 
 - Create and configure two Linux-based virtual servers (EC2 instances in AWS).
 
-    Server A name - "mysql server"
-    Server B name - "mysql client"
+    - Server A name - "mysql server"
+    - Server B name - "mysql client"
 
 ![alt text](images/3.Instances.PNG)
 
@@ -53,7 +53,7 @@ In this little example, your terminal will be the client, while www.netflix.com 
 
     ![alt text](images/4.ChgIP1.PNG)
 
-    Replace ‘127.0.0.1’ above to ‘0.0.0.0
+    Replace ‘127.0.0.1’ above to ‘0.0.0.0'
 
 - From mysql client Linux Server connect remotely to mysql server Database Engine without using SSH. You must use the mysql utility to perform this action
 
@@ -61,17 +61,16 @@ In this little example, your terminal will be the client, while www.netflix.com 
 
     ![alt text](images/6.pswd.PNG)
 
-    Use the mysql utility to perform this action.
-
-       `mysql -h server-ip -u username -p`
+    - Use the mysql utility to perform this action.
+        `mysql -h server-ip -u username -p`
 
     ![alt text](images/7.login.PNG)
 
     For clarity:
-        mysql server ip: 172.31.81.127
-        mysql client ip: 172.31.82.150
+    - mysql server ip: 172.31.81.127
+    - mysql client ip: 172.31.82.150
 
-        From our sql client (172.31.82.150), we connected to the database on our mysql server (172.31.81.127) using mysql command
+    From our sql client (172.31.82.150), we connected to the database on our mysql server (172.31.81.127) using mysql command
     
 - Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
 
