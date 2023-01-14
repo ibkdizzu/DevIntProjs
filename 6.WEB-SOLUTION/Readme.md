@@ -361,8 +361,7 @@ If all goes well to this point, we can access wordpress from our web server url
     *http://<Web-Server-Public-IP-Address>*
 
 ![alt text](images/28.Res1.PNG)
-![alt text](images/28.Res2.PNG)
-![alt text](images/28.Res3.PNG)
+![alt text](images/28.Res3b.PNG)
 ![alt text](images/28.Res4.PNG)
 ![alt text](images/28.Res5.PNG)
 
