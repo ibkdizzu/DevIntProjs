@@ -197,7 +197,7 @@ Start Apache
    `sudo systemctl enable httpd`
    `sudo systemctl start httpd`
 
-To install PHP and its depemdencies
+To install PHP and its dependencies
 
 Install the EPEL repository
 
