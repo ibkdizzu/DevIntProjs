@@ -10,8 +10,7 @@ There are two parts to this project
 2. Install WordPress and connect it to a remote MySQL database server. 
 - We want to solidify our skill of deploying Web and DB tiers of Web solution.
 
-# LAUNCH AN EC2 INSTANCE THAT WILL SERVE AS “WEB SERVER”
-
+# LAUNCH AN EC2 INSTANCE
 Launch an EC2 instance that will serve as "Web Server".
 
 ![alt text](images/1.redhat.PNG)
@@ -184,7 +183,7 @@ Repeat the same steps as for the Web Server, but instead of apps-lv create db-lv
 ![alt text](images/19.db-vi.PNG)
 ![alt text](images/20..PNG)
 
-# Install WordPress on your Web Server EC2
+# Install WordPress on your Web Server
 Update the repository
 
    `sudo yum -y update`
@@ -258,7 +257,7 @@ Confirm wordpress has beem successfully copied to var/www/html
    ls
    ```
 
-Step 5 — Configure DB to work with WordPress on DB
+Configure DB to work with WordPress on DB
 
 Install mysql server
    
@@ -269,20 +268,35 @@ Install mysql server
 
 Restart and enable mysqld
 
-   ``
+   ```
    sudo systemctl restart mysqld
    sudo systemctl enable mysqld
    ```
 
-```
+Create database
+   ```
    sudo mysql
    CREATE DATABASE wordpress;
+   ```
+Create admin user 
+
+   ```
    CREATE USER `root`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'password';
+   ```
+
+Grant admin user all access on the database
+
+   ```
    GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>';
    FLUSH PRIVILEGES;
+   ```
+Test that you can access the database. If successful, exit
+
+   ```
    SHOW DATABASES;
    exit
-```
+   ```
+
 ![alt text](images/db.PNG)
 
 >**NB**: Using the IP restricts access to the database to only the IP specified
@@ -341,6 +355,7 @@ Configure SELinux Policies
   sudo setsebool -P httpd_can_network_connect=1
   sudo setsebool -P httpd_can_network_connect_db 1
   ```
+  
 If all goes well to this point, we can access wordpress from our web server url
 
    -  http://<Web-Server-Public-IP-Address>/wordpress/
