@@ -12,7 +12,7 @@ There are two parts to this project
 
 # LAUNCH AN EC2 INSTANCE THAT WILL SERVE AS “WEB SERVER”
 
-Launch an EC2 instance that will serve as "Web Server". .
+Launch an EC2 instance that will serve as "Web Server".
 
 ![alt text](images/1.redhat.PNG)
 
@@ -43,7 +43,7 @@ See all mounts and free space on your server
 
 ![alt text](images/4.freespace.PNG)
 
- create a single partition on each of the 3 disks with dgisk utility 
+Create a single partition on each of the 3 disks with dgisk utility 
 
    `sudo gdisk /dev/xvdf`
    `sudo gdisk /dev/xvdg`
@@ -51,7 +51,7 @@ See all mounts and free space on your server
 
 ![alt text](images/5.part4.PNG)
 
- View the newly configured partition on each of the 3 disks
+View the newly configured partition on each of the 3 disks
 
    `lsblk`
 
@@ -61,17 +61,21 @@ Install lvm2 package using
 
    `sudo yum install lvm2`
 
-Run bwloq command to check for available partitions
+Run command below to check for available partitions
 
    `sudo lvmdiskscan`
+
 ![alt text](images/6.lvm.PNG)
 
 Next, we want to create physical volumes
 Use pvcreate utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM
 
-   `sudo pvcreate /dev/xvdf1`
-   `sudo pvcreate /dev/xvdg1`
-   `sudo pvcreate /dev/xvdh1`
+   ```
+   sudo pvcreate /dev/xvdf1
+   sudo pvcreate /dev/xvdg1
+   sudo pvcreate /dev/xvdh1
+   ```
+   `sudo pvs`
 
 ![alt text](images/7.pvs.PNG)
 
@@ -91,8 +95,10 @@ Create 2 logical volumes.
 
 Half of the physical volume(PV) is allocated to each of the logical volumes (LV)
 
-   `sudo lvcreate -n apps-lv -L 14G webdata-vg`
-   `sudo lvcreate -n logs-lv -L 14G webdata-vg`
+   ```
+   sudo lvcreate -n apps-lv -L 14G webdata-vg
+   sudo lvcreate -n logs-lv -L 14G webdata-vg
+   ```
 
 Verify that your Logical Volume has been created successfully
 
@@ -104,7 +110,7 @@ Verify the entire setup
 
    `sudo vgdisplay -v`
 
-This gives a summary view of the Volume group(VG), Physical volume(PV) and Logical volume (V)
+This gives a summary view of the Volume group(VG), Physical volume(PV) and Logical volume (LV)
 
    `sudo lsblk`
 
@@ -112,8 +118,10 @@ This gives a summary view of the Volume group(VG), Physical volume(PV) and Logic
 
 Format the logical volumes with ext4 filesystem
 
-   `sudo mkfs -t ext4 /dev/webdata-vg/apps-lv`
-   `sudo mkfs -t ext4 /dev/webdata-vg/logs-lv`
+   ```
+   sudo mkfs -t ext4 /dev/webdata-vg/apps-lv
+   sudo mkfs -t ext4 /dev/webdata-vg/logs-lv
+   ```
 
 Create a mount point for the directories
 
@@ -133,7 +141,7 @@ Mount /var/www/html on apps-lv logical volume
 
 >**NB** Mounting wipe out existing data, ensure to confirm the the directory is empty or back up existing files before mounting.
 
-Back up all the files in the log directory /var/log into /home/recovery/logs (**This is required before mounting the file system**)
+Back up all the files in the log directory /var/log into /home/recovery/logs - *This is required before mounting the file system*
 
    `sudo rsync -av /var/log/. /home/recovery/logs/`
 
@@ -197,6 +205,7 @@ Install the EPEL repository
   `sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`
 
 Next import yum utils and enable remirepository
+
    `http://rpms.remirepo.net/enterprise/remi-release-8.rpm`
 
 Get the list of php versions available for installation
@@ -216,8 +225,11 @@ Finally, Install PHP, PHP-FPM(FastCGI Process Manager) and associated PHP module
   `sudo yum install php php-opcache php-gd php-curl php-mysqlnd`
 
 Start and enable php-fpm
-   `sudo systemctl start php-fpm`
-   `sudo systemctl enable php-fpm`
+   
+   ```
+   sudo systemctl start php-fpm
+   sudo systemctl enable php-fpm
+   ```
 
 Instruct SELinux to allow Apache execute the PHP code via PHP-FPM run
 
@@ -241,18 +253,26 @@ Download wordpress and copy wordpress to var/www/html
 
 Confirm wordpress has beem successfully copied to var/www/html
 
-   `cd /var/www/html`
-   `ls`
+   ```
+   cd /var/www/html
+   ls
+   ```
 
 Step 5 — Configure DB to work with WordPress on DB
-SH
+
 Install mysql server
-   `sudo yum update`
-   `sudo yum install mysql-server`
+   
+   ```
+   sudo yum update
+   sudo yum install mysql-server
+   ```
 
 Restart and enable mysqld
-   `sudo systemctl restart mysqld`
-   `sudo systemctl enable mysqld`
+
+   ``
+   sudo systemctl restart mysqld
+   sudo systemctl enable mysqld
+   ```
 
 ```
    sudo mysql
@@ -265,7 +285,7 @@ Restart and enable mysqld
 ```
 ![alt text](images/db.PNG)
 
->**NB** \Using the IP restricts access to the database to only the IP specified
+>**NB**: Using the IP restricts access to the database to only the IP specified
 To connect from *anywhere* use '%' instead of the IP when creating the user
 Also GRANT ALL ON wordpress.* restrict the user's access to all tables(*) on wordpress
 To grant user access to all tables on all databases use `GRANT ALL ON *.*....` in your command string
@@ -322,7 +342,8 @@ Configure SELinux Policies
   sudo setsebool -P httpd_can_network_connect_db 1
   ```
 If all goes well to this point, we can access wordpress from our web server url
-*ec2-18-233-160-60.compute-1.amazonaws.com*
+
+   -  http://<Web-Server-Public-IP-Address>/wordpress/
 
 ![alt text](images/28.Res1.PNG)
 ![alt text](images/28.Res2.PNG)
