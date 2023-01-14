@@ -355,10 +355,10 @@ Configure SELinux Policies
   sudo setsebool -P httpd_can_network_connect=1
   sudo setsebool -P httpd_can_network_connect_db 1
   ```
-  
+
 If all goes well to this point, we can access wordpress from our web server url
 
-   -  http://<Web-Server-Public-IP-Address>/wordpress/
+   -  http://<Web-Server-Public-IP-Address>
 
 ![alt text](images/28.Res1.PNG)
 ![alt text](images/28.Res2.PNG)
